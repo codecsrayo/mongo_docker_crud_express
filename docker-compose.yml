@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  api:
+    tty: true
+    build: ./
+    restart: always
+    container_name: api_rest
+    volumes:
+      - ./:/usr/app:rw
+      - node_modules:/usr/app/node_modules
+    networks:
+      - api
+
+    ports:
+      - 3100:3100
+
+    depends_on:
+      - mongo_db
+
+  mongo_db:
+      image: mongo:latest
+      container_name: mongo_db
+      ports:
+          - "27017:27017"
+      networks: 
+          - "api"
+      volumes: 
+          - "mongo-data:/data/db"
+
+
+networks: 
+    api:
+        driver: bridge
+
+volumes:
+    node_modules:
+    mongo-data:
+        driver: local
