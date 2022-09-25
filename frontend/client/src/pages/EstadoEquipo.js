@@ -7,16 +7,15 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 
-const url = "http://localhost:3100/api/usuarios/";
+const url = "http://localhost:3100/api/estado_equipo/";
 
-class TipoEquipo extends Component {
+class EstadoEquipo extends Component {
   state = {
     data: [],
     modalInsertar: false,
     modalEliminar: false,
     form: {
       nombre: "",
-      email: "",
       estado: true,
       createdAt: "",
       updatedAt: "",
@@ -67,14 +66,13 @@ class TipoEquipo extends Component {
     this.setState({ modalInsertar: !this.state.modalInsertar });
   };
 
-  seleccionarUsuario = (usuario) => {
+  seleccionarEstadoEquipo = (estado_equipo) => {
     this.setState({
       tipoModal: "actualizar",
       form: {
-        id: usuario.id,
-        nombre: usuario.nombre,
-        email: usuario.email,
-        estado: usuario.estado,
+        id: estado_equipo.id,
+        nombre: estado_equipo.nombre,
+        estado: estado_equipo.estado,
       },
     });
   };
@@ -109,7 +107,7 @@ class TipoEquipo extends Component {
               this.modalInsertar();
             }}
           >
-            Agregar Usuario
+            Agregar Estado Equipo
           </button>
           <br />
           <br />
@@ -119,28 +117,26 @@ class TipoEquipo extends Component {
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Estado</th>
-                <th>Email</th>
                 <th>Creado</th>
                 <th>Actualizado</th>
                 <th>Opciones</th>
               </tr>
             </thead>
             <tbody>
-              {this.state.data.map((usuario) => {
+              {this.state.data.map((estado_equipo) => {
                 return (
                   <tr>
-                    <td>{usuario.id}</td>
-                    <td>{usuario.nombre}</td>
-                    <td>{String(usuario.estado)}</td>
-                    <td>{usuario.email}</td>
-                    <td>{usuario.createdAt}</td>
-                    <td>{usuario.updatedAt}</td>
+                    <td>{estado_equipo.id}</td>
+                    <td>{estado_equipo.nombre}</td>
+                    <td>{String(estado_equipo.estado)}</td>
+                    <td>{estado_equipo.createdAt}</td>
+                    <td>{estado_equipo.updatedAt}</td>
 
                     <td>
                       <button
                         className="btn btn-primary"
                         onClick={() => {
-                          this.seleccionarUsuario(usuario);
+                          this.seleccionarEstadoEquipo(estado_equipo);
                           this.modalInsertar();
                         }}
                       >
@@ -150,7 +146,7 @@ class TipoEquipo extends Component {
                       <button
                         className="btn btn-danger"
                         onClick={() => {
-                          this.seleccionarUsuario(usuario);
+                          this.seleccionarEstadoEquipo(estado_equipo);
                           this.setState({ modalEliminar: true });
                         }}
                       >
@@ -195,16 +191,6 @@ class TipoEquipo extends Component {
                   value={form ? form.nombre : ""}
                 />
                 <br />
-                <label htmlFor="email">email</label>
-                <input
-                  className="form-control"
-                  type="text"
-                  name="email"
-                  id="email"
-                  onChange={this.handleChange}
-                  value={form ? form.email : ""}
-                />
-                <br />
                 <label htmlFor="estado">Estado</label>
                 <input
                   className="form-control"
@@ -244,7 +230,7 @@ class TipoEquipo extends Component {
 
           <Modal isOpen={this.state.modalEliminar}>
             <ModalBody>
-              Estás seguro que deseas eliminar a la usuario{" "}
+              Estás seguro que deseas eliminar el estado del estado equipo{" "}
               {form && form.nombre}
             </ModalBody>
             <ModalFooter>
@@ -267,4 +253,4 @@ class TipoEquipo extends Component {
     );
   }
 }
-export default TipoEquipo;
+export default EstadoEquipo;
