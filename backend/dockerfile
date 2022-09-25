@@ -1,6 +1,6 @@
 FROM node:current-alpine3.16
 
-workdir /usr/app
+workdir /usr/backend
 
 COPY package*.json ./
 RUN npm install

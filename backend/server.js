@@ -4,7 +4,7 @@ const logger = require('morgan');
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3100"
+  origin: ["http://localhost:3100", "http://192.168.190.129:3000"]
 };
 
 app.use(cors(corsOptions));
@@ -15,7 +15,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("./models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -34,12 +34,12 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/turorial.router")(app);
-require("./app/routes/estado.equipo.router")(app);
-require("./app/routes/inventario.router")(app);
-require("./app/routes/marcas.router")(app);
-require("./app/routes/tipo.equipo.router")(app);
-require("./app/routes/usuarios.router")(app);
+require("./routes/turorial.router")(app);
+require("./routes/estado.equipo.router")(app);
+require("./routes/inventario.router")(app);
+require("./routes/marcas.router")(app);
+require("./routes/tipo.equipo.router")(app);
+require("./routes/usuarios.router")(app);
 
 
 // set port, listen for requests
