@@ -1,0 +1,14 @@
+FROM node:current-alpine3.16
+
+workdir /usr/frontend
+
+COPY ./client/package*.json ./
+RUN npm install
+COPY . .
+
+
+
+# CMD ["npm","start"]
+CMD ["npm","run", "dev"]
+
+USER node
