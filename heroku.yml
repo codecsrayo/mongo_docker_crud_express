@@ -1,0 +1,57 @@
+version: '3.9'
+
+services:
+  backend:
+    tty: true
+    build: ./backend
+    restart: always
+    container_name: backend_rest
+    volumes:
+      - ./backend:/usr/backend:rw
+      - /usr/backend/node_modules
+    networks:
+      - internal
+
+    ports:
+      - 3100:3100
+
+    depends_on:
+      - mongo_db
+
+
+  frontend:
+    tty: true
+    build: ./frontend
+    restart: always
+    container_name: frontend_react
+    volumes:
+      - ./frontend/client:/usr/frontend
+      - /usr/frontend/client/node_modules
+    networks:
+      - internal
+
+    ports:
+      - 3000:3000
+
+
+
+
+  mongo_db:
+      image: mongo:latest
+      container_name: mongo_db
+      ports:
+          - "27017:27017"
+      networks: 
+          - "internal"
+      volumes: 
+          - "mongo-data:/data/db"
+
+
+networks: 
+    internal:
+        driver: bridge
+
+volumes:
+    front:
+    mongo-data:
+        driver: local
