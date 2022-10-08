@@ -1,5 +1,0 @@
-build:
-  docker:
-    frontend: Dockerfile
-    backend: Dockerfile
-    mongo_db: Dockerfile
