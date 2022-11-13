@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "a557ca50-110a-4a98-a78e-647b7a606810",
+		"name": "ContenerizacionAPIREST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20490416"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"test\",\r\n\"description\": \"tes3_update\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cliente/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Nombre\": \"test\",\r\n\"Email\": \"example@example.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cliente/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"test\",\r\n\"description\": \"tes2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cliente/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Nombre\": \"test\",\r\n\"Email\": \"example@example.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cliente",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoProyecto",
+			"item": [
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tipo_proyectos/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tipo_proyectos",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"Ensayo\": \"example\",\r\n    \"Articulo\": \"example\",\r\n    \"Monografia\": \"example\",\r\n    \"TrabajoFinalPregrado\": \"example\",\r\n    \"TrabajoFinalesPecializacion\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tipo_proyectos/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tipo_proyectos",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tipo_proyectos/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tipo_proyectos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"Ensayo\": \"example\",\r\n    \"Articulo\": \"example\",\r\n    \"Monografia\": \"example\",\r\n    \"TrabajoFinalPregrado\": \"example\",\r\n    \"TrabajoFinalesPecializacion\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tipo_proyectos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tipo_proyectos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Universidad",
+			"item": [
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/universidad/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"universidad",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"Direccion\": \"example\",\r\n    \"Telefono\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/universidad/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"universidad",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/universidad/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"universidad",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"Direccion\": \"example\",\r\n    \"Telefono\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/universidad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"universidad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Etapas",
+			"item": [
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/etapas/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"etapas",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"AnteProyecto\": \"example\",\r\n    \"ParcialFirst\": \"example\",\r\n    \"ParcialSecond\": \"example\",\r\n    \"EntregaFinal\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/etapas/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"etapas",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/etapas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"etapas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"example\",\r\n    \"AnteProyecto\": \"example\",\r\n    \"ParcialFirst\": \"example\",\r\n    \"ParcialSecond\": \"example\",\r\n    \"EntregaFinal\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/etapas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"etapas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proyecto",
+			"item": [
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/proyecto/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proyecto",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Titulo\": \"example\",\r\n    \"FechaInicio\": \"example\",\r\n    \"FechaEntrega\": \"example\",\r\n    \"Valor\": \"example\",\r\n    \"Requerido\": \"example\",\r\n    \"TipoProyecto\": \"example\",\r\n    \"Universidad\": \"example\",\r\n    \"EtapaProyecto\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proyecto/6318c7003a966830af2b36ac",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proyecto",
+								"6318c7003a966830af2b36ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/proyecto/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proyecto",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Titulo\": \"example\",\r\n    \"FechaInicio\": \"example\",\r\n    \"FechaEntrega\": \"example\",\r\n    \"Valor\": \"example\",\r\n    \"Requerido\": \"example\",\r\n    \"TipoProyecto\": \"example\",\r\n    \"Universidad\": \"example\",\r\n    \"EtapaProyecto\": \"example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proyecto",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
