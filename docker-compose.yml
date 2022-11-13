@@ -8,7 +8,7 @@ services:
     container_name: backend_rest
     volumes:
       - ./backend:/usr/backend:rw
-      - ./usr/backend/node_modules:/usr/backend/node_modules
+      - ./backend/node_modules:/usr/backend/node_modules
     networks:
       - internal
 
@@ -17,23 +17,6 @@ services:
 
     depends_on:
       - mongo_db
-
-
-  frontend:
-    tty: true
-    build: ./frontend
-    restart: always
-    container_name: frontend_react
-    volumes:
-      - ./frontend/client:/usr/frontend
-      - ./frontend/client/node_modules:/usr/frontend/node_modules
-    networks:
-      - internal
-
-    ports:
-      - 3000:3000
-
-
 
 
   mongo_db:
@@ -52,6 +35,5 @@ networks:
         driver: bridge
 
 volumes:
-    front:
     mongo-data:
         driver: local
