@@ -13,4 +13,10 @@ db.marcas = require("./marcas.model.js")(mongoose);
 db.inventario = require("./inventario.model.js")(mongoose);
 db.usuarios = require("./usuarios.model.js")(mongoose);
 
+db.TipoProyectoModel = require("./TipoProyectoModel")(mongoose);
+db.ClienteModel = require("./ClienteModel")(mongoose);
+db.UniversidadModel = require("./UniversidadModel")(mongoose);
+db.EtapasModel = require("./EtapasModel")(mongoose);
+db.ProyectoModel = require("./ProyectoModel")(mongoose);
+
 module.exports = db;

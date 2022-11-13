@@ -28,46 +28,40 @@ permitirá listar, crear y editar proyectos.
 __ResumenModels__:
 
 ```yaml
-TipoProyecto:
+TipoProyectoModel:
     - Nombre
     - Ensayo
     - Articulo
     - Monografia
     - TrabajoFinalPregrado
     - TrabajoFinalesPecializacion
-    - FechaCreacion
-    - FechaUpdate
 
-Cliente:
+
+ClienteModel:
     - Nombre
     - Email
-    - FechCreacion
-    - FechaUpdate
 
-Universidad:
+
+UniversidadModel:
     - Nombre
     - Direccion
     - Telefono
-    - FechaCreacion
-    - FechaActualizacion
 
-Etapas:
+
+EtapasModel:
     - Nombre
     - AnteProyecto
     - ParcialFirst
     - ParcialSecond
     - EntregaFinal
-    - FechaCreacion
-    - FechaUpdate
 
-Proyecto:
+
+ProyectoModel:
     - Numero
     - Titulo
     - FechaInicio
     - FechaEntrega
     - Valor
-    - FechaCreacion
-    - FechaUpdate
     - Requerido
     - TipoProyecto
     - Universidad
