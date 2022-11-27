@@ -1,4 +1,4 @@
-FROM node:current-alpine3.16
+FROM codecsrayo/backend:latest
 
 workdir /usr/backend
 
