@@ -1,3 +1,6 @@
+Consumo del api:
+http://loclhost:3100/api
+
 # Actividad Énfasis 2a Técnologías web 
  
 En  la  institución  universitaria  IUDigital  existe  un  área  destinada  a  la  realización  de  asesorías 
