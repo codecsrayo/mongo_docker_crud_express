@@ -1,20 +1,38 @@
 version: '3.9'
 
 services:
-  backend:
-    tty: true
+  backend_0:
     build: ./backend
     restart: always
-    container_name: backend_rest
+    container_name: BACKEND_0
     volumes:
-      - ./backend:/usr/backend:rw
+      - ./backend:/usr/backend
       - ./backend/node_modules:/usr/backend/node_modules
+    environment:
+      - CONTAINER_HOST=backend_0
     networks:
       - internal
 
-    ports:
-      - 3100:3100
+    expose:
+      - 3100
 
+    depends_on:
+      - mongo_db
+
+  
+  backend_1:
+    build: ./backend
+    restart: always
+    container_name: BACKEND_1
+    volumes:
+      - ./backend:/usr/backend
+      - ./backend/node_modules:/usr/backend/node_modules
+    environment:
+      - CONTAINER_HOST=backend_1
+    networks:
+      - internal
+    expose:
+      - 3100
     depends_on:
       - mongo_db
 
@@ -28,6 +46,24 @@ services:
           - "internal"
       volumes: 
           - "mongo-data:/data/db"
+
+
+
+
+  load_balancer:
+    container_name: 'load_balancer'
+    tty: true
+    build: ./load_balancer
+    ports:
+    - "8082:80"
+    networks:
+    - internal
+    depends_on:
+    - backend_0
+    - backend_1
+    restart: always
+
+
 
 
 networks: 

@@ -1,6 +1,6 @@
 FROM codecsrayo/backend:latest
 
-workdir /usr/backend
+WORKDIR /usr/backend
 
 COPY package*.json ./
 RUN npm install
