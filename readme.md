@@ -1,6 +1,18 @@
 Consumo del api:
 http://localhost:8082/api
 
+
+Contenedores en docker hub push:
+```bash
+docker tag 38c8e7598380  codecsrayo/mongo_docker_crud_express_backend_0
+docker push codecsrayo/mongo_docker_crud_express_backend_0
+
+docker tag 38c8e7598380  codecsrayo/mongo_docker_crud_express_backend_1
+docker push codecsrayo/mongo_docker_crud_express_backend_1
+```
+url container_0: https://hub.docker.com/r/codecsrayo/mongo_docker_crud_express_backend_0
+url container_1: https://hub.docker.com/r/codecsrayo/mongo_docker_crud_express_backend_1
+
 # Actividad Énfasis 2a Técnologías web 
  
 En  la  institución  universitaria  IUDigital  existe  un  área  destinada  a  la  realización  de  asesorías 
