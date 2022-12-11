@@ -19,23 +19,6 @@ services:
       - mongo_db
 
 
-  frontend:
-    tty: true
-    build: ./frontend
-    restart: always
-    container_name: frontend_react
-    volumes:
-      - ./frontend/client:/usr/frontend
-      - /usr/frontend/client/node_modules
-    networks:
-      - internal
-
-    ports:
-      - 3000:3000
-
-
-
-
   mongo_db:
       image: mongo:latest
       container_name: mongo_db
