@@ -7,7 +7,7 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 
-const url = "http://localhost:3100/api/usuarios/";
+const url = "http://192.168.190.176:3100/api/usuarios/";
 
 class TipoEquipo extends Component {
   state = {
@@ -218,7 +218,7 @@ class TipoEquipo extends Component {
             </ModalBody>
 
             <ModalFooter>
-              {this.state.tipoModal == "insertar" ? (
+              {this.state.tipoModal === "insertar" ? (
                 <button
                   className="btn btn-success"
                   onClick={() => this.peticionPost()}

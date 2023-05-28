@@ -4,7 +4,7 @@ const logger = require('morgan');
 const app = express();
 
 var corsOptions = {
-  origin: ["http://localhost:3100", "http://192.168.190.129:3000"]
+  origin: ["http://localhost:3100", "http://192.168.190.176:3000"]
 };
 
 app.use(cors(corsOptions));

@@ -7,7 +7,7 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 
-const url = "http://localhost:3100/api/estado_equipo/";
+const url = "http://192.168.190.176:3100/api/estado_equipo/";
 
 class EstadoEquipo extends Component {
   state = {
