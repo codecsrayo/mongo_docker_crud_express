@@ -249,91 +249,73 @@ package "Servidor Linux" {
 @enduml
 ```
 
-![architectura](/arquitectura.png)
+![architectura](/arquitectura.svg)
 
 
 ## **Diagrama de casos de uso**
 ```plantuml
 @startuml
+actor Usuario
+usecase "Registrar tipo de equipo" as T
+usecase "Registrar estado de equipo" as E
+usecase "Registrar marcas" as M
+usecase "Registrar equipos en inventario" as I
+usecase "Gestionar pagos" as P
 
-left to right direction
-
-actor Usuario as U
-actor Administrador as A
-actor Cliente as C
-
-rectangle "Gestión de Usuarios" as GU {
-  usecase "Crear Usuario" as CU
-  usecase "Editar Usuario" as EU
-}
-
-rectangle "Gestión de Marcas" as GM {
-  usecase "Crear Marca" as CM
-  usecase "Editar Marca" as EM
-}
-
-rectangle "Gestión de Inventario" as GI {
-  usecase "Crear Equipo" as CE
-  usecase "Editar Equipo" as EE
-}
-
-rectangle "Gestión de Tipos de Equipo" as GTE {
-  usecase "Crear Tipo de Equipo" as CTE
-  usecase "Editar Tipo de Equipo" as ETE
-}
-
-rectangle "Gestión de Estados de Equipo" as GEE {
-  usecase "Crear Estado de Equipo" as CEE
-  usecase "Editar Estado de Equipo" as EEE
-}
-
-rectangle "Gestión de Pagos" as GP {
-  usecase "Realizar Pago" as RP
-  usecase "Ver Facturas Pendientes" as VFP
-  usecase "Consultar Historial de Pagos" as CHP
-  usecase "Recibir Notificaciones de Confirmación de Pago" as NCP
-}
-
-rectangle "Gestión de Carrito de Compras" as GCC {
-  usecase "Agregar al carrito" as AC
-}
-
-U --|> CU
-U --|> EU
-A --|> CU
-A --|> EU
-U --|> CM
-U --|> EM
-A --|> CM
-A --|> EM
-U --|> CE
-U --|> EE
-A --|> CE
-A --|> EE
-U --|> CTE
-U --|> ETE
-A --|> CTE
-A --|> ETE
-U --|> CEE
-U --|> EEE
-A --|> CEE
-A --|> EEE
-U --|> RP
-U --|> VFP
-U --|> CHP
-U --|> NCP
-A --|> RP
-A --|> VFP
-A --|> CHP
-A --|> NCP
-C --|> RP
-C --|> VFP
-C --|> AC
-
-AC --> RP
-
+Usuario --> T
+Usuario --> E
+Usuario --> M
+Usuario --> I
+Usuario --> P
 @enduml
 ```
-![architectura](/casos_uso.png)    
+![casos_uso](/casos_uso.svg)    
     
 
+### **Diagrama de secuencia**
+```plantuml
+@startuml
+actor "Usuario" as U
+entity "Tipo de equipo" as T
+entity "Estado de equipo" as E
+entity "Marcas" as M
+entity "Inventario" as I
+entity "Gestión de Pagos" as P
+
+U -> T : Registra tipo de equipo
+U -> E : Registra estado de equipo
+U -> M : Registra marcas
+U -> I : Registra equipos en inventario
+U -> P : Gestiona pagos
+
+note right of U : Los usuarios tienen a cargo los equipos del inventario
+note right of U : Los usuarios gestionan los pagos realizados por los clientes
+@enduml
+
+```
+![secuencia](/secuencia.svg)  
+
+
+### **Diagrama de componentes**
+```plantuml
+@startuml
+package "mongo_docker_crud_express" {
+  [Tipo de equipo] as T
+  [Estado de equipo] as E
+  [Usuarios] as U
+  [Marcas] as M
+  [Inventario] as I
+  [Gestión de Pagos] as P
+}
+
+U ..> T : utiliza
+U ..> E : utiliza
+U ..> M : utiliza
+U ..> I : utiliza
+U ..> P : utiliza
+@enduml
+```
+![secuencia](/componentes.svg)
+
+### **Modelado MER y MR**
+![secuencia](/mer_mr.svg)
