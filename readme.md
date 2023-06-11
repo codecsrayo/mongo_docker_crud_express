@@ -129,19 +129,72 @@ El sistema permitirá la creación, visualización y edición de los pagos y las
 
 ## Arquítectura
 
-linux: 
 
-  docker:
-  
-    - backend: express
-    
-    - BD: mongodb
-    
-    - frontend: react
-    
-  cliente:
-  
-    - navegador
+@startuml
+
+package "Cliente" {
+  [Frontend]
+}
+
+package "Servidor Linux" {
+  node "Backend" {
+    [API]
+  }
+
+  database "Base de Datos" {
+    [Usuarios]
+    [Marcas]
+    [Inventario]
+    [Tipos de Equipo]
+    [Estados de Equipo]
+    [Pagos]
+  }
+
+  package "Módulo de Usuarios" {
+    [Creación de Usuarios]
+    [Edición de Usuarios]
+  }
+
+  package "Módulo de Marcas" {
+    [Creación de Marcas]
+    [Edición de Marcas]
+  }
+
+  package "Módulo de Inventario" {
+    [Creación de Equipos]
+    [Edición de Equipos]
+  }
+
+  package "Módulo de Tipo de Equipo" {
+    [Creación de Tipos de Equipo]
+    [Edición de Tipos de Equipo]
+  }
+
+  package "Módulo de Estado de Equipo" {
+    [Creación de Estados de Equipo]
+    [Edición de Estados de Equipo]
+  }
+
+  package "Gestión de Pagos" {
+    [Realizar Pagos]
+    [Visualización de Facturas Pendientes]
+    [Historial de Pagos]
+    [Notificaciones de Confirmación de Pago]
+  }
+}
+
+"Frontend" --> "API" : Envía solicitudes
+"API" --> "Frontend" : Responde a solicitudes
+
+"Módulo de Usuarios" --> "Base de Datos" : Almacena/Recupera Usuarios
+"Módulo de Marcas" --> "Base de Datos" : Almacena/Recupera Marcas
+"Módulo de Inventario" --> "Base de Datos" : Almacena/Recupera Equipos
+"Módulo de Tipo de Equipo" --> "Base de Datos" : Almacena/Recupera Tipos de Equipo
+"Módulo de Estado de Equipo" --> "Base de Datos" : Almacena/Recupera Estados de Equipo
+"Gestión de Pagos" --> "Base de Datos" : Almacena/Recupera Pagos
+
+@enduml
+
 
     
     
