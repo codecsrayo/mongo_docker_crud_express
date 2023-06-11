@@ -1,5 +1,5 @@
-const db = require('../models');
-const Pago = db.pago;
+const db = require("../models");
+const Pago = db.pago
 
 exports.createPago = async (req, res) => {
   try {
@@ -13,7 +13,7 @@ exports.createPago = async (req, res) => {
 
 exports.getPagoById = async (req, res) => {
   try {
-    const pago = await Pago.findById(req.params.id);
+    const pago = await Pago.findById(req.params.id).populate('referenciaArticulo');
     if (pago) {
       res.json(pago);
     } else {
@@ -47,5 +47,14 @@ exports.deletePago = async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({ error: error.message });
+  }
+};
+
+exports.getAllPagos = async (req, res) => {
+  try {
+    const pagos = await Pago.find();
+    res.json(pagos);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };

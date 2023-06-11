@@ -326,6 +326,38 @@ Los mockups son una herramienta valiosa para los diseñadores y desarrolladores,
 ![mockups](/diagrams/mockups.svg)
 
 
+### **Consideraciones**
+Implementar una plataforma de pagos como PSE (Pagos Seguros en Línea) implica una serie de pasos técnicos y regulatorios. Aquí te proporciono una descripción general de alto nivel de cómo se podría hacer esto:
+
+1. **Cumplimiento normativo**: Antes de comenzar a desarrollar la plataforma, es importante entender y cumplir con todas las regulaciones financieras y de privacidad de datos aplicables en tu país. Esto puede incluir obtener licencias o permisos, cumplir con las normas de seguridad de datos y tener políticas claras de privacidad y uso.
+
+2. **Asociación con bancos y otras instituciones financieras**: Para poder procesar pagos, necesitarás establecer relaciones con bancos y otras instituciones financieras. Esto puede implicar la negociación de tarifas, la configuración de cuentas comerciales y la integración con sus sistemas de pago.
+
+3. **Desarrollo de la plataforma**: La plataforma de pagos necesitará una interfaz de usuario segura y fácil de usar, así como una robusta infraestructura de back-end para procesar las transacciones, manejar errores, emitir reembolsos, etc. Esto requerirá un equipo de desarrollo de software con experiencia en el desarrollo de aplicaciones financieras seguras.
+
+4. **Integración de la pasarela de pago**: La plataforma necesitará integrarse con una pasarela de pago que pueda manejar el procesamiento de las transacciones de pago. Esto puede implicar la integración con múltiples pasarelas de pago para soportar diferentes métodos de pago.
+
+5. **Pruebas y seguridad**: Antes de lanzar la plataforma, es crucial realizar pruebas exhaustivas para asegurarse de que funciona correctamente y de que es segura. Esto puede implicar pruebas de penetración, pruebas de carga y pruebas de usabilidad.
+
+6. **Lanzamiento y soporte**: Una vez que la plataforma esté lista, puedes lanzarla al público. Sin embargo, el trabajo no se detiene ahí. Necesitarás proporcionar soporte al cliente, manejar disputas de pago y mantener y actualizar la plataforma de forma regular.
+
+![pagos](/diagrams/pagos.svg)
+
+
+Este diagrama muestra los siguientes pasos:
+
+1. El usuario inicia una transacción en la plataforma de pagos.
+2. La plataforma de pagos solicita al usuario los detalles del pago.
+3. El usuario proporciona los detalles del pago a la plataforma.
+4. La plataforma envía una solicitud de pago a la pasarela de pago.
+5. La pasarela de pago solicita la autorización del pago al banco.
+6. El banco proporciona el estado de la autorización a la pasarela de pago.
+7. La pasarela de pago envía el estado de la autorización a la plataforma de pagos.
+8. La plataforma de pagos proporciona el estado de la transacción al usuario.
+
+
+
+
 ## **Licencia**
 
 Este proyecto está bajo la [licencia MIT](LICENSE).

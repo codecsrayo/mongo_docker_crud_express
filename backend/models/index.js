@@ -12,5 +12,6 @@ db.tipo_equipo = require("./tipo.equipo.model.js")(mongoose);
 db.marcas = require("./marcas.model.js")(mongoose);
 db.inventario = require("./inventario.model.js")(mongoose);
 db.usuarios = require("./usuarios.model.js")(mongoose);
+db.pago = require("./pago.model.js")(mongoose);
 
 module.exports = db;
