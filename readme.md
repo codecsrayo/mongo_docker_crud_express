@@ -249,8 +249,91 @@ package "Servidor Linux" {
 @enduml
 ```
 
-![Texto alternativo](/arquitectura.png)
+![architectura](/arquitectura.png)
 
-    
+
+## **Diagrama de casos de uso**
+```plantuml
+@startuml
+
+left to right direction
+
+actor Usuario as U
+actor Administrador as A
+actor Cliente as C
+
+rectangle "Gestión de Usuarios" as GU {
+  usecase "Crear Usuario" as CU
+  usecase "Editar Usuario" as EU
+}
+
+rectangle "Gestión de Marcas" as GM {
+  usecase "Crear Marca" as CM
+  usecase "Editar Marca" as EM
+}
+
+rectangle "Gestión de Inventario" as GI {
+  usecase "Crear Equipo" as CE
+  usecase "Editar Equipo" as EE
+}
+
+rectangle "Gestión de Tipos de Equipo" as GTE {
+  usecase "Crear Tipo de Equipo" as CTE
+  usecase "Editar Tipo de Equipo" as ETE
+}
+
+rectangle "Gestión de Estados de Equipo" as GEE {
+  usecase "Crear Estado de Equipo" as CEE
+  usecase "Editar Estado de Equipo" as EEE
+}
+
+rectangle "Gestión de Pagos" as GP {
+  usecase "Realizar Pago" as RP
+  usecase "Ver Facturas Pendientes" as VFP
+  usecase "Consultar Historial de Pagos" as CHP
+  usecase "Recibir Notificaciones de Confirmación de Pago" as NCP
+}
+
+rectangle "Gestión de Carrito de Compras" as GCC {
+  usecase "Agregar al carrito" as AC
+}
+
+U --|> CU
+U --|> EU
+A --|> CU
+A --|> EU
+U --|> CM
+U --|> EM
+A --|> CM
+A --|> EM
+U --|> CE
+U --|> EE
+A --|> CE
+A --|> EE
+U --|> CTE
+U --|> ETE
+A --|> CTE
+A --|> ETE
+U --|> CEE
+U --|> EEE
+A --|> CEE
+A --|> EEE
+U --|> RP
+U --|> VFP
+U --|> CHP
+U --|> NCP
+A --|> RP
+A --|> VFP
+A --|> CHP
+A --|> NCP
+C --|> RP
+C --|> VFP
+C --|> AC
+
+AC --> RP
+
+@enduml
+```
+![architectura](/casos_uso.png)    
     
 
