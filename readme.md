@@ -1,3 +1,4 @@
+<!--todo lo refrente a creación de diagramas, modelado, arquitectura será diseñado en plamuml  -->
 La universidad Digital de Antioquia necesita llevar el control de los equipos de cómputo 
 (computadores (escritorio y portátiles), mouse, teclado, monitores, etc.), móviles (celulares, 
 tabletas, parlantes, etc.), etc. Para ello requiere contar con una aplicación web en donde se registren 
@@ -125,3 +126,23 @@ I. Notificación: mensaje que se envía después de realizar un pago.
 II. Detalles de la notificación: incluye detalles del pago, como la cantidad, la fecha y el método de pago.
 
 El sistema permitirá la creación, visualización y edición de los pagos y las facturas.
+
+## Arquítectura
+
+linux: 
+
+  docker:
+  
+    - backend: express
+    
+    - BD: mongodb
+    
+    - frontend: react
+    
+  cliente:
+  
+    - navegador
+
+    
+    
+
