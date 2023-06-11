@@ -129,7 +129,7 @@ El sistema permitirá la creación, visualización y edición de los pagos y las
 
 ## Arquítectura
 
-
+```plantuml
 @startuml
 
 package "Cliente" {
@@ -194,7 +194,9 @@ package "Servidor Linux" {
 "Gestión de Pagos" --> "Base de Datos" : Almacena/Recupera Pagos
 
 @enduml
+```
 
+![Texto alternativo](/arquitectura.png)
 
     
     
