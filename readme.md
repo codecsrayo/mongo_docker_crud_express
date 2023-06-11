@@ -91,3 +91,37 @@ XI. Tipo de equipo. El sistema deberá permitir la selección de solo los tipos 
 módulo de tipos de equipo. 
 
 El sistema permitirá la creación y edición de los equipos del inventario.  
+
+# Módulo de Gestión de Pagos
+
+Este módulo permitirá gestionar los pagos realizados por los clientes. Deberá proporcionar funcionalidades para realizar pagos, visualizar facturas pendientes, ver el historial de pagos y recibir notificaciones de confirmación de pago. A continuación, se presentan las funcionalidades clave que se esperan de este módulo:
+
+# Módulo de Gestión de Pagos
+
+Este módulo permitirá gestionar los pagos realizados por los clientes. Proporcionará funcionalidades para realizar pagos, visualizar facturas pendientes, ver el historial de pagos y recibir notificaciones de confirmación de pago. Para este módulo, se necesitará guardar la siguiente información:
+
+## Realizar Pagos
+
+I. Método de pago: campo de selección que permita escoger el método de pago.
+
+II. Confirmación de pago: estado que indique si el pago se ha realizado con éxito.
+
+## Visualización de Facturas Pendientes
+
+I. Lista de facturas: muestra todas las facturas pendientes de pago.
+
+II. Detalles de la factura: incluye el monto, la fecha de vencimiento y los servicios o productos facturados.
+
+## Historial de Pagos
+
+I. Lista de pagos: muestra todos los pagos realizados.
+
+II. Detalles del pago: incluye la cantidad, la fecha y el método de pago.
+
+## Notificaciones de Confirmación de Pago
+
+I. Notificación: mensaje que se envía después de realizar un pago.
+
+II. Detalles de la notificación: incluye detalles del pago, como la cantidad, la fecha y el método de pago.
+
+El sistema permitirá la creación, visualización y edición de los pagos y las facturas.
