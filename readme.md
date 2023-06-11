@@ -249,6 +249,7 @@ U ..> P : utiliza
 
 ### **Modelado MER y MR**
 MER (Modelo Entidad-Relación) y MR (Modelo Relacional) son técnicas de modelado de datos que describen cómo los datos están organizados y cómo se relacionan entre sí.
+
 ![mer_mr](/diagrams/mer_mr.svg)
 
 
