@@ -40,6 +40,7 @@ require("./routes/inventario.router")(app);
 require("./routes/marcas.router")(app);
 require("./routes/tipo.equipo.router")(app);
 require("./routes/usuarios.router")(app);
+require("./routes/pago.router")(app);
 
 
 // set port, listen for requests
